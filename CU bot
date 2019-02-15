@@ -1,0 +1,97 @@
+
+
+
+Create db: chukacu_ai
+
+
+tables
+	users:    id, name, email,msisdn,gender
+	commands:  id,text
+	responses: id,user_id, response_text
+
+	control_board: id, user_id, count
+
+
+
+
+
+
+
+usertable
+id	name		email		msisdn		gender
+---------------------------------------------------------------------
+1	__			__			0560556		___
+
+
+commands
+id			text
+-----------------------------------------------
+1			Haloooo,....
+2			Name 
+3			Email
+4			gender
+5			Thank you.... Give details{...}
+
+
+control_board
+1d		user_id		count
+-------------------------------------------------
+1		1		1
+2		1		2
+
+
+responses
+id	user_id		response_text
+---------------------------------------------------
+1	1		YES
+
+
+User
+
+
+Telegram
+-------------------------------------------------------------------------------------------------
+start()
+	< msisdn  createUser if nit exist, save to control_board, count=1
+		select commands where id==count 
+        >
+			|
+			|  Halloo and Welcome to ChukaCU. We want to make your experince waoh..
+			|  So how about you help me know you better.. I promise i wont bite....
+			|  Deal?
+			|
+YES		    |
+	<msisdn|text, dinf user with this number..... user_id=1,, go to controlBoard where user_id=1 		sekect count=1
+
+		inrement count=2
+
+		save as a new row
+
+		save response
+
+		select from commands where id=count=2
+	>
+
+			|	
+			|  Sweet... Whats your name dear...?
+			|
+Timothy Wahome		|
+Amm tim, 		|
+Naitwa Timothy          |
+			|
+
+<do the same as before....>
+
+	< get the name, save it in the database >
+			|
+			|			
+			|  Thank you Tim. How about your email?
+			|
+
+if counnt ==4
+
+
+timo@gmail.com
+	
+
+
